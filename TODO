@@ -2,7 +2,6 @@
 2 .difference() https://lodash.com/docs/4.17.15#difference
 3 .xor() https://lodash.com/docs/4.17.15#xor
 
-//etc
 
 1 funzione per generare array di lunghezza n con interi casuali
 2 usare l'API https://developer.mozilla.org/en-US/docs/Web/API/Performance/now per fare benchmarking delle proprie funzioni
