@@ -11,9 +11,9 @@ console.log("Hello, world!");
  */
 
 my_array= [50, 60, 10, 25, 30, 45, 5];
-arraycolor=["rosso","giallo","blu","viola","bianco","nero"];
 arrayword=["ciao","come", "stai"]
 arraydobble=["ciao","ciao", "viola","viola", 10,10]
+arraycolor=["rosso","giallo","blu","viola","bianco","nero"];
 
 
 
@@ -141,4 +141,50 @@ Array.prototype.average = function() {
     return this.length ? this.reduce((acc, val) => acc + val, 0) / this.length : 0;
 };
 console.log(my_array.average())
+
+// Implementazione array da lodash 
+// chunck
+
+function chunk(array,size){
+    if(!Array.isArray (array) || size <=0){
+        return [];
+    };
+   let result =[];
+   for (let i = 0; i < array.length; i += size) {
+     result.push(array.slice(i, i + size)); // Estrazione chunk
+    }
+   return result;
+ 
+};
+
+console.log("chunk")
+console.log(chunk(my_array, 3));
+console.log(chunk(arrayword, 2));
+console.log(chunk(arraydobble, 3));
+console.log(chunk(arraycolor, 2));
+
+
+// .difference()
+
+function difference (arrOne, arrTwo){
+    return arrOne.filter(item=>!arrTwo.includes(item))
+};
+
+const diffOne=difference(my_array,arraydobble);
+const diffTwo=difference(arrayword,arraydobble);
+const diffThree=difference(arraycolor,arraydobble);
+
+console.log("difference");
+console.log(diffOne);
+console.log(diffTwo);
+console.log(diffThree);
+
+
+function xorArrays(...arrays) {
+  const allValues = arrays.flat(); // Unisce tutti gli array
+  return allValues.filter(item =>arrays.filter(arr => arr.includes(item)).length === 1);
+}
+console.log("xor")
+console.log(xorArrays(my_array, arrayword, arraydobble, arraycolor));
+
 
