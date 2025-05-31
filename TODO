@@ -1,3 +1,15 @@
 1 Da loadash implementa .chunck() https://lodash.com/docs/4.17.15#chunk
 2 .difference() https://lodash.com/docs/4.17.15#difference
 3 .xor() https://lodash.com/docs/4.17.15#xor
+
+//etc
+
+1 funzione per generare array di lunghezza n con interi casuali
+2 usare l'API https://developer.mozilla.org/en-US/docs/Web/API/Performance/now per fare benchmarking delle proprie funzioni
+3 reimplementare difference e confrontare le performance con array di dimensione crescente (significativamente crescente)
+
+// teoria
+1 binary search (ricerca dicotomica)
+2 asymptotic complexity
+3 set difference algorithms (questa é la soluzione guardare per ultima)
+4 sorting comparison between selection sort, quicksort
