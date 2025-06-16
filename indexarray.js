@@ -11,9 +11,9 @@ console.log("Hello, world!");
  */
 
 my_array= [50, 60, 10, 25, 30, 45, 5];
-arraycolor=["rosso","giallo","blu","viola","bianco","nero"];
 arrayword=["ciao","come", "stai"]
 arraydobble=["ciao","ciao", "viola","viola", 10,10]
+arraycolor=["rosso","giallo","blu","viola","bianco","nero"];
 
 
 
@@ -141,4 +141,3 @@ Array.prototype.average = function() {
     return this.length ? this.reduce((acc, val) => acc + val, 0) / this.length : 0;
 };
 console.log(my_array.average())
-
