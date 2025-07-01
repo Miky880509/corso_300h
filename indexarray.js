@@ -137,6 +137,65 @@ Array.prototype.unique = function() {
 };
 console.log (arraydobble.unique())
 
+
+// APPROFONFIMENTO DIFFERENCE
+
+function getRandomInt(lun, min, max) {
+    let array = [];
+    for (let i = 0; i < lun; i++) {
+        array.push(Math.floor(Math.random() * (max - min + 1)) + min);
+    }
+    return array;
+}
+
+
+let casualNumber1 = getRandomInt(10, 10, 100);
+console.log("Array con numeri casuali1:", casualNumber1);
+
+
+let casualNumber2 = getRandomInt(100, 10, 100);
+console.log("Array con numeri casuali2:",casualNumber2);
+
+
+function difference(order1, order2) {
+    order1 = [...order1].sort((a, b) => a - b); 
+    order2 = [...order2].sort((a, b) => a - b); 
+
+    let uniqueArray1 = [];
+    for (let i = 0; i < order1.length; i++) {
+        let found = false;
+        for (let j = 0; j < order2.length; j++) {
+            if (order1[i] === order2[j]) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            uniqueArray1.push(order1[i]);
+        }
+    }
+    console.log("Elementi presenti nel primo array ma non nel secondo:", uniqueArray1);
+
+    let uniqueArray2 = [];
+    for (let i = 0; i < order2.length; i++) {
+        let found = false;
+        for (let j = 0; j < order1.length; j++) {
+            if (order2[i] === order1[j]) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            uniqueArray2.push(order2[i]);
+        }
+    }
+    console.log("Elementi presenti nel secondo array ma non nel primo:", uniqueArray2);
+}
+
+difference(casualNumber1, casualNumber2);
+
+     
+
 Array.prototype.average = function() {
     return this.length ? this.reduce((acc, val) => acc + val, 0) / this.length : 0;
 };
