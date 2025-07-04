@@ -164,15 +164,41 @@ function difference(order1, order2) {
     let uniqueArray1 = [];
     for (let i = 0; i < order1.length; i++) {
         let found = false;
+
+        /* START pro tip: the following lines perform a well known and reusable routine. You should refactor this code to a function.
+        Where can you find analogous code? */
         for (let j = 0; j < order2.length; j++) {
             if (order1[i] === order2[j]) {
                 found = true;
                 break;
             }
         }
-        if (!found) {
-            uniqueArray1.push(order1[i]);
-        }
+        // END of pro tip
+
+
+        /* ALTERNATIVA 1 (sintassi alternativa usando for-of, stessa semantica): haystack e needle sono termini usati in inglese per le operazioni di ricerca, 
+        * needle vuol dire ago mentre haystack pagliaio 
+        */
+        // const needle = order1[i];
+        // const haystack = order2; 
+
+        // for (const element of haystack) {
+        //     if (element === needle) {
+        //         found = true;
+        //         break
+        //     }
+        // }
+
+        /* ALTERNATIVA 2 (sempre stessa semantica, cambia solo la sintassi) */
+        // found = haystack.some(element => element === needle)
+
+        /* ALTERNATIVA 3 (stessa cosa) */
+        // found = haystack.indexOf(element => element === needle) !== -1
+
+        /* Per un algoritmo piú veloce tuttavia devi cambiare le operazioni logiche che fai non la 
+        * semantica quindi per la complessitá asintotica dell algoritmo 
+        * queste alternative sono su per giú equivalenti 
+        */
     }
     console.log("Elementi presenti nel primo array ma non nel secondo:", uniqueArray1);
 
