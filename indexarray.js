@@ -140,6 +140,7 @@ console.log (arraydobble.unique())
 
 // APPROFONFIMENTO DIFFERENCE
 
+/* Nome un po' fuorviante, infatti quando uso la funzione non prendo un random int, ma un Array di interi */
 function getRandomInt(lun, min, max) {
     let array = [];
     for (let i = 0; i < lun; i++) {
@@ -156,7 +157,7 @@ console.log("Array con numeri casuali1:", casualNumber1);
 let casualNumber2 = getRandomInt(100, 10, 100);
 console.log("Array con numeri casuali2:",casualNumber2);
 
-
+/* nome un po' fuorviante, sembra che gli array debbano essere giá ordinati quando li passi alla funzione */
 function difference(order1, order2) {
     order1 = [...order1].sort((a, b) => a - b); 
     order2 = [...order2].sort((a, b) => a - b); 
