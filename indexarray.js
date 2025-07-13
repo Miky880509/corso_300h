@@ -330,4 +330,34 @@ const comuni = difference2(casualNumber1, casualNumber2);
 console.log(`Elementi comuni: ${comuni}`);
 
 
+/// eliminazione array slice e continua a dividere array inziale  
+
+sortedArr3= [9,8,7,6,5,4,3,2,1];
+let needle3 = 7;
+
+function binSearch3(sortedArr3, needle3) {
+   
+   const min = 0;
+   const max = sortedArr3.length -1;
+
+   while ( min <= max) {
+      const middle = Math.floor((min+max )/ 2);
+      const midValue = sortedArr3[middle];
+     
+      if (midValue === needle3) {
+            return true; 
+        }
+        
+        if (needle3 > midValue) {
+            min = middle - 1; 
+        } else {
+            max = middle + 1; 
+        }
+    }
+    
+    return false; 
+
+}
+
+
 
