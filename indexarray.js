@@ -137,6 +137,12 @@ Array.prototype.unique = function() {
 };
 console.log (arraydobble.unique())
 
+    
+Array.prototype.average = function() {
+    return this.length ? this.reduce((acc, val) => acc + val, 0) / this.length : 0;
+};
+console.log(my_array.average())
+
 
 // APPROFONFIMENTO DIFFERENCE
 
@@ -221,9 +227,107 @@ function difference(order1, order2) {
 
 difference(casualNumber1, casualNumber2);
 
-     
+//APPROFONDIMENTO BINARYSEARCH
+// ricevo valori preimpostati
+sortedArr= [1,2,3,4,5,6];
+let needle = 5;
 
-Array.prototype.average = function() {
-    return this.length ? this.reduce((acc, val) => acc + val, 0) / this.length : 0;
-};
-console.log(my_array.average())
+function binSearch(sortedArr, needle) {
+    const mid = Math.floor(sortedArr.length / 2);
+    const primameta = sortedArr.slice(0, mid);
+    const secondameta = sortedArr.slice(mid);
+
+    // se il needle è minore dell'ultimo elemento Cerca nella prima metà 
+    if (needle <= primameta[primameta.length - 1]) {
+        for (const element of primameta) {
+            if (element === needle) {
+                console.log(`Trovato ${element} nella prima metà!`);
+                return true; 
+            }
+        }
+    } 
+    
+    //se il needle è minore dell'ultimo elemento Cerca nella prima metà
+    else {
+        for (const element of secondameta) {
+            if (element === needle) {
+                console.log(`Trovato ${element} nella seconda metà!`);
+                return true; 
+            }
+        }
+    }
+    
+    console.log(`Valore ${needle} non trovato nell'array`);
+}
+
+console.log(`Ricerca con valori preimpostati:`);
+binSearch(sortedArr, needle);
+
+
+//ricevo array generati causualmente non generando il console log nelle funzione bin2, cosi da raggrupapre il risultato
+
+
+function binSearch2(sortedArr, needle) {
+    const mid = Math.floor(sortedArr.length / 2);
+    const primameta = sortedArr.slice(0, mid);
+    const secondameta = sortedArr.slice(mid);
+
+    // se il needle è minore dell'ultimo elemento Cerca nella prima metà 
+    if (needle <= primameta[primameta.length - 1]) {
+        for (const element of primameta) {
+            if (element === needle) {
+                return true; 
+            }
+        }
+    } 
+    
+    //se il needle è minore dell'ultimo elemento Cerca nella prima metà
+    else {
+        for (const element of secondameta) {
+            if (element === needle) {
+                return true; 
+            }
+        }
+    }
+    
+    return false;
+}
+
+ function difference(order1, order2) {
+
+ let uniqueElements = [];
+
+    //iteri su gli elementi di order1 verificando se  NON sono presenti in order2
+    for (const element of order1) {
+        if (binSearch2(order2, element) === false){
+            uniqueElements.push(element);
+        }
+    } 
+
+    return uniqueElements;
+}
+
+//Trova e stampa solo gli elementi presenti in order1 ma non in order2
+const onlyInFirst = difference(casualNumber1, casualNumber2);
+console.log(`Elementi presenti solo nel primo array: ${onlyInFirst}`);
+
+function difference2(order1, order2) {
+
+ let uniqueElements = [];
+
+    //iteri su gli elementi di order1 verificando se  NON sono presenti in order2
+    for (const element of order1) {
+        if (binSearch2(order2, element) === true){
+            uniqueElements.push(element);
+        }
+    } 
+
+    return uniqueElements;
+}
+
+//Trova e stampa solo gli elementi presenti in order1 ma non in order2
+const comuni = difference2(casualNumber1, casualNumber2);
+console.log(`Elementi comuni: ${comuni}`);
+
+
+
