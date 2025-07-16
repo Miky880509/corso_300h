@@ -138,6 +138,13 @@ Array.prototype.unique = function() {
 console.log (arraydobble.unique())
 
 
+Array.prototype.average = function() {
+    return this.length ? this.reduce((acc, val) => acc + val, 0) / this.length : 0;
+};
+console.log(my_array.average())
+
+
+
 // APPROFONFIMENTO DIFFERENCE
 
 function getRandomInt(lun, min, max) {
@@ -194,9 +201,138 @@ function difference(order1, order2) {
 
 difference(casualNumber1, casualNumber2);
 
-     
 
-Array.prototype.average = function() {
-    return this.length ? this.reduce((acc, val) => acc + val, 0) / this.length : 0;
-};
-console.log(my_array.average())
+
+// ricevo valori preimpostati
+sortedArr= [1,2,3,4,5,6];
+let needle = 5;
+
+function binSearch(sortedArr, needle) {
+    const mid = Math.floor(sortedArr.length / 2);
+    const primameta = sortedArr.slice(0, mid);
+    const secondameta = sortedArr.slice(mid);
+
+    // se il needle è minore dell'ultimo elemento Cerca nella prima metà 
+    if (needle <= primameta[primameta.length - 1]) {
+        for (const element of primameta) {
+            if (element === needle) {
+                console.log(`Trovato ${element} nella prima metà!`);
+                return true; 
+            }
+        }
+    } 
+    
+    //se il needle è minore dell'ultimo elemento Cerca nella prima metà
+    else {
+        for (const element of secondameta) {
+            if (element === needle) {
+                console.log(`Trovato ${element} nella seconda metà!`);
+                return true; 
+            }
+        }
+    }
+    
+    console.log(`Valore ${needle} non trovato nell'array`);
+}
+
+console.log(`Ricerca con valori preimpostati:`);
+binSearch(sortedArr, needle);
+
+
+//ricevo array generati causualmente non generando il console log nelle funzione bin2, cosi da raggruppare il risultato
+
+
+function binSearch2(sortedArr, needle) {
+    const mid = Math.floor(sortedArr.length / 2);
+    const primameta = sortedArr.slice(0, mid);
+    const secondameta = sortedArr.slice(mid);
+
+    // se il needle è minore dell'ultimo elemento Cerca nella prima metà 
+    if (needle <= primameta[primameta.length - 1]) {
+        for (const element of primameta) {
+            if (element === needle) {
+                return true; 
+            }
+        }
+    } 
+    
+    //se il needle è minore dell'ultimo elemento Cerca nella prima metà
+    else {
+        for (const element of secondameta) {
+            if (element === needle) {
+                return true; 
+            }
+        }
+    }
+    
+    return false;
+}
+
+ function difference(order1, order2) {
+
+ let uniqueElements = [];
+
+    //iteri su gli elementi di order1 verificando se  NON sono presenti in order2
+    for (const element of order1) {
+        if (binSearch2(order2, element) === false){
+            uniqueElements.push(element);
+        }
+    } 
+
+    return uniqueElements;
+}
+
+//Trova e stampa solo gli elementi presenti in order1 ma non in order2
+const onlyInFirst = difference(casualNumber1, casualNumber2);
+console.log(`Elementi presenti solo nel primo array: ${onlyInFirst}`);
+
+function difference2(order1, order2) {
+
+ let uniqueElements = [];
+
+    //iteri su gli elementi di order1 verificando se  NON sono presenti in order2
+    for (const element of order1) {
+        if (binSearch2(order2, element) === true){
+            uniqueElements.push(element);
+        }
+    } 
+
+    return uniqueElements;
+}
+
+//Trova e stampa solo gli elementi presenti in order1 ma non in order2
+const comuni = difference2(casualNumber1, casualNumber2);
+console.log(`Elementi comuni: ${comuni}`);
+
+
+/// eliminazione array slice e continua a dividere array inziale  
+
+sortedArr3= [9,8,7,6,5,4,3,2,1];
+let needle3 = 7;
+
+function binSearch3(sortedArr3, needle3) {
+   
+   let start = 0;
+   let end = sortedArr3.length -1;
+
+   while ( min <= max) {
+      const middle = Math.floor((start+end)/ 2);
+      const midValue = sortedArr3[middle];
+     
+      if (midValue === needle3) {
+            return true; 
+        }
+        
+        if (needle3 > midValue) {
+            min = middle - 1; 
+        } else {
+            max = middle + 1; 
+        }
+    }
+    
+    return false; 
+
+}
+
+
+     
