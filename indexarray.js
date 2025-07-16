@@ -310,23 +310,26 @@ console.log(`Elementi comuni: ${comuni}`);
 sortedArr3= [9,8,7,6,5,4,3,2,1];
 let needle3 = 7;
 
-function binSearch3(sortedArr3, needle3) {
+sortedArr3= [9,8,7,6,5,4,3,2,1];
+let needle3 = 7;
+
+function binSearch3(array, needle) {
    
    let start = 0;
-   let end = sortedArr3.length -1;
+   let end = array.length -1;
 
-   while ( min <= max) {
+   while ( start <= end) {
       const middle = Math.floor((start+end)/ 2);
-      const midValue = sortedArr3[middle];
+      const midValue = array[middle];
      
-      if (midValue === needle3) {
+      if (midValue === needle) {
             return true; 
         }
         
-        if (needle3 > midValue) {
-            min = middle - 1; 
+        if (needle > midValue) {
+            start= middle + 1; 
         } else {
-            max = middle + 1; 
+            end = middle - 1; 
         }
     }
     
@@ -334,5 +337,6 @@ function binSearch3(sortedArr3, needle3) {
 
 }
 
+binSearch3(sortedArr3, needle3);
 
      
