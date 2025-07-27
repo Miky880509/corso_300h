@@ -1,0 +1,21 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Miky880509/algorithm#readme",
+  "bugs": {
+    "url": "https://github.com/Miky880509/algorithm/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miky880509/algorithm.git"
+  },
+  "license": "ISC",
+  "author": "Micaela Topazi",
+  "type": "commonjs",
+  "main": "indexarray.js",
+  "scripts": {
+    "start": "node indexarray.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
