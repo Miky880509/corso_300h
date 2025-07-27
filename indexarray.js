@@ -310,9 +310,6 @@ console.log(`Elementi comuni: ${comuni}`);
 sortedArr3= [9,8,7,6,5,4,3,2,1];
 let needle3 = 7;
 
-sortedArr3= [9,8,7,6,5,4,3,2,1];
-let needle3 = 7;
-
 function binSearch3(array, needle) {
    
    let start = 0;
