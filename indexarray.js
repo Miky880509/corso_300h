@@ -311,6 +311,7 @@ sortedArr3= [9,8,7,6,5,4,3,2,1];
 let needle3 = 7;
 
 function binSearch3(array, needle) {
+
    
    let start = 0;
    let end = array.length -1;
@@ -319,11 +320,19 @@ function binSearch3(array, needle) {
       const middle = Math.floor((start+end)/ 2);
       const midValue = array[middle];
      
+
       if (midValue === needle) {
             return true; 
         }
         
         if (needle > midValue) {
+
+      if (midValue === needle3) {
+            return true; 
+        }
+        
+        if (needle3 > midValue) {
+
             start= middle + 1; 
         } else {
             end = middle - 1; 
@@ -332,6 +341,7 @@ function binSearch3(array, needle) {
     
     return false; 
 
+}
 }
 
 binSearch3(sortedArr3, needle3);
