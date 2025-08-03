@@ -10,10 +10,10 @@ console.log("Hello, world!");
  * // → [[1, 3], [2, 4]]
  */
 
-my_array= [50, 60, 10, 25, 30, 45, 5];
-arrayword=["ciao","come", "stai"]
-arraydobble=["ciao","ciao", "viola","viola", 10,10]
-arraycolor=["rosso","giallo","blu","viola","bianco","nero"];
+let my_array= [50, 60, 10, 25, 30, 45, 5];
+let arrayword=["ciao","come", "stai"]
+let arraydobble=["ciao","ciao", "viola","viola", 10,10]
+let arraycolor=["rosso","giallo","blu","viola","bianco","nero"];
 
 
 
@@ -50,7 +50,7 @@ function foreach(my_array) {
     
     let result = [];
     
-    for (i = 0; i < my_array.length; i++) {
+    for (let i = 0; i < my_array.length; i++) {
      console.log(my_array[i]);
     } 
     return result;
@@ -197,6 +197,9 @@ function difference(order1, order2) {
         }
     }
     console.log("Elementi presenti nel secondo array ma non nel primo:", uniqueArray2);
+
+      return { uniqueArray1, uniqueArray2 };
+
 }
 
 difference(casualNumber1, casualNumber2);
@@ -204,7 +207,7 @@ difference(casualNumber1, casualNumber2);
 
 
 // ricevo valori preimpostati
-sortedArr= [1,2,3,4,5,6];
+let sortedArr= [1,2,3,4,5,6];
 let needle = 5;
 
 function binSearch(sortedArr, needle) {
@@ -268,7 +271,7 @@ function binSearch2(sortedArr, needle) {
     return false;
 }
 
- function difference(order1, order2) {
+ function difference1(order1, order2) {
 
  let uniqueElements = [];
 
@@ -284,7 +287,7 @@ function binSearch2(sortedArr, needle) {
 
 //Trova e stampa solo gli elementi presenti in order1 ma non in order2
 const onlyInFirst = difference(casualNumber1, casualNumber2);
-console.log(`Elementi presenti solo nel primo array: ${onlyInFirst}`);
+console.log(`Elementi presenti solo nel primo array: ${onlyInFirst.uniqueArray1}`);
 
 function difference2(order1, order2) {
 
@@ -307,7 +310,7 @@ console.log(`Elementi comuni: ${comuni}`);
 
 /// eliminazione array slice e continua a dividere array inziale  
 
-sortedArr3= [9,8,7,6,5,4,3,2,1];
+let sortedArr3= [9,8,7,6,5,4,3,2,1];
 let needle3 = 7;
 
 function binSearch3(array, needle) {

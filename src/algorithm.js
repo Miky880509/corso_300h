@@ -1,7 +1,7 @@
 
 // APPROFONDIMENTO DIFFERENCE
 
-function getRandomInt(lun, min, max) {
+ export function getRandomInt(lun, min, max) {
     let array = [];
     for (let i = 0; i < lun; i++) {
         array.push(Math.floor(Math.random() * (max - min + 1)) + min);
@@ -9,17 +9,9 @@ function getRandomInt(lun, min, max) {
     return array;
 }
 
-
-let casualNumber1 = getRandomInt(10, 10, 100).sort((a, b) => a - b);
-console.log("Array con numeri casuali1:", casualNumber1);
-
-
-let casualNumber2 = getRandomInt(100, 10, 100).sort((a, b) => a - b);
-console.log("Array con numeri casuali2:",casualNumber2);
-
 //FUNZIONE VERBOSA E RINTONDANTE CON IL SECONDO CICLO FOR
-  
- function difference(order1, order2) {
+
+ export function difference(order1, order2) {
     order1 = [...order1].sort((a, b) => a - b); 
     order2 = [...order2].sort((a, b) => a - b); 
 
@@ -56,31 +48,9 @@ console.log("Array con numeri casuali2:",casualNumber2);
     console.log("Elementi presenti nel secondo array ma non nel primo:", uniqueArray2);
    }
 
-  difference(casualNumber1, casualNumber2);
-
- /*appunti di chiarimento 
-
-
- found = (haystack.indexOf(element => element === needle)) !== -1
-
- const b = haystack.indexOf //function {function {element: numero intero }  => viene restituito un elemento numero intero= 1. Esempio haystack[0]=1
-  const c = element => element === needle // function {element: numero intero } => booleano (vero o falso) 
-
-  const a = (b(c))
-
- found = a !== -1
-
- haystack.indexOf(element => 
-    
- element === needle) 
- 
- !== -1*/
-
 // ricevo valori preimpostati
-sortedArr= [1,2,3,4,5,6];
-let needle = 5;
 
-function binSearch(sortedArr, needle) {
+export function binSearch(sortedArr, needle) {
     const mid = Math.floor(sortedArr.length / 2);
     const primameta = sortedArr.slice(0, mid);
     const secondameta = sortedArr.slice(mid);
@@ -108,14 +78,10 @@ function binSearch(sortedArr, needle) {
     console.log(`Valore ${needle} non trovato nell'array`);
 }
 
-console.log(`Ricerca con valori preimpostati:`);
-binSearch(sortedArr, needle);
-
-
 //ricevo array generati causualmente non generando il console log nelle funzione bin2, cosi da raggruppare il risultato
 
 
-function binSearch2(sortedArr, needle) {
+export function binSearch2(sortedArr, needle) {
     const mid = Math.floor(sortedArr.length / 2);
     const primameta = sortedArr.slice(0, mid);
     const secondameta = sortedArr.slice(mid);
@@ -141,7 +107,7 @@ function binSearch2(sortedArr, needle) {
     return false;
 }
 
- function difference(order1, order2) {
+export function difference1(order1, order2) {
 
  let uniqueElements = [];
 
@@ -155,11 +121,8 @@ function binSearch2(sortedArr, needle) {
     return uniqueElements;
 }
 
-//Trova e stampa solo gli elementi presenti in order1 ma non in order2
-const onlyInFirst = difference(casualNumber1, casualNumber2);
-console.log(`Elementi presenti solo nel primo array: ${onlyInFirst}`);
 
-function difference2(order1, order2) {
+export function difference2(order1, order2) {
 
  let uniqueElements = [];
 
@@ -173,18 +136,9 @@ function difference2(order1, order2) {
     return uniqueElements;
 }
 
-//Trova e stampa solo gli elementi presenti in order1 ma non in order2
-
-const comuni = difference2(casualNumber1, casualNumber2);
-console.log(`Elementi comuni: ${comuni}`);
-
-
 /// eliminazione array slice e continua a dividere array inziale  
 
-sortedArr3= [9,8,7,6,5,4,3,2,1];
-let needle3 = 7;
-
-function binSearch3(array, needle) {
+export function binSearch3(array, needle) {
    
    let start = 0;
    let end = array.length -1;
@@ -208,4 +162,4 @@ function binSearch3(array, needle) {
 
 }
 
-binSearch3(sortedArr3, needle3);
+

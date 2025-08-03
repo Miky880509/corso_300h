@@ -1,0 +1,35 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "description": "Progetto di approfondimento su algoritmi e funzioni binarie",
+  "main": "indexarray.js",
+  "type": "module",
+  "scripts": {
+    "start": "node indexarray.js",
+    "test": "node test/test-algorithm.js"
+  },
+  "author": {
+    "name": "Micaela Topazi",
+    "email": "micaelatopazi@gmail.com",
+    "url": "https://github.com/Miky880509"
+  },
+  "contributors": [
+    {
+      "name": "Umberto Fontanazza",
+      "url": "https://github.com/umbertofontanazza",
+      "role": "Mentore e progettazione"
+    }
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Miky880509/algorithm#readme",
+  "bugs": {
+    "url": "https://github.com/Miky880509/algorithm/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miky880509/algorithm.git"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

@@ -1,5 +1,5 @@
 
-import { chunk, difference, xorArrays } from "./my-loadash.js";
+import { chunk, difference, xorArrays } from "../src/my_lodash.js";
 import _ from "lodash";
 // import {strict as assert} from "node:assert"
 
