@@ -1,6 +1,8 @@
 
 // APPROFONDIMENTO DIFFERENCE
 
+//creare Array randomici
+
  export function getRandomInt(lun, min, max) {
     let array = [];
     for (let i = 0; i < lun; i++) {
@@ -9,9 +11,9 @@
     return array;
 }
 
-//FUNZIONE VERBOSA E RINTONDANTE CON IL SECONDO CICLO FOR
+//FUNZIONE VERBOSA E RINTONDANTE CON IL SECONDO CICLO FOR (Test difference)
 
- export function difference(order1, order2) {
+export function difference(order1, order2) {
     order1 = [...order1].sort((a, b) => a - b); 
     order2 = [...order2].sort((a, b) => a - b); 
 
@@ -46,9 +48,9 @@
         }
     }
     console.log("Elementi presenti nel secondo array ma non nel primo:", uniqueArray2);
-   }
+}
 
-// ricevo valori preimpostati
+// ricevo valori preimpostati (Test binSearch con array ordinato)
 
 export function binSearch(sortedArr, needle) {
     const mid = Math.floor(sortedArr.length / 2);
@@ -78,7 +80,9 @@ export function binSearch(sortedArr, needle) {
     console.log(`Valore ${needle} non trovato nell'array`);
 }
 
-//ricevo array generati causualmente non generando il console log nelle funzione bin2, cosi da raggruppare il risultato
+//ricevo array generati causualmente non generando il console log nelle funzione bin2
+// Raggruppo il risultato
+// Test (binSearch2 e raggrupo il risultato in Difference1)
 
 
 export function binSearch2(sortedArr, needle) {
@@ -107,6 +111,8 @@ export function binSearch2(sortedArr, needle) {
     return false;
 }
 
+// Raggruppo i risultati Elementi solo nel primo array:
+
 export function difference1(order1, order2) {
 
  let uniqueElements = [];
@@ -121,6 +127,7 @@ export function difference1(order1, order2) {
     return uniqueElements;
 }
 
+//Raggruppo i risultati Elementi comuni:
 
 export function difference2(order1, order2) {
 
@@ -136,10 +143,11 @@ export function difference2(order1, order2) {
     return uniqueElements;
 }
 
-/// eliminazione array slice e continua a dividere array inziale  
+// definizione dell'algoritmo 
+// eliminazione array slice e continua a dividere array inziale   
 
 export function binSearch3(array, needle) {
-   
+    
    let start = 0;
    let end = array.length -1;
 
@@ -161,5 +169,8 @@ export function binSearch3(array, needle) {
     return false; 
 
 }
+
+
+
 
 
